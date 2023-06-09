@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: db_mysql
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=wall2003
+      - MYSQL_DATABASE=keycloak
+    ports:
+      - "3306:3306"
+    volumes:
+      - C:\Users\Emanoel\Documents\programacao\keycloak\data:/var/lib/mysql
+  keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KC_DB=mysql
+      - KC_DB_USERNAME=root
+      - KC_DB_PASSWORD=wall2003
+      - KC_DB_URL_HOST=db
+      - KC_DB_URL_PORT=3306
+      - KC_DB_SCHEMA=keycloak
+      - KC_HTTP_RELATIVE_PATH=/auth
+    ports:
+      - 8080:8080
+    command: start-dev
+    depends_on:
+      - db
