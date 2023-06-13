@@ -1,0 +1,43 @@
+footer {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100000;
+  height: 50px;
+}
+
+footer button {
+  background-color: #623CEA;
+  padding: 0.5em 1em;
+  border: none;
+  outline: none;
+  border-radius: 0.5em;
+  color: white;
+}
+
+.buttons-nav {
+  display: flex;
+  gap: 1em;
+}
+
+.botao-ativado {
+  filter: brightness(1);
+}
+
+.botao-desativado {
+  filter: brightness(0.5);
+}
+
+@media screen and (min-width: 700px) {
+
+  .btn-add-footer {
+    width: 200px;
+  }
+
+}

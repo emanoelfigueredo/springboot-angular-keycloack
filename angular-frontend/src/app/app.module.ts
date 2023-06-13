@@ -9,6 +9,8 @@ import { ListaLivrosComponent } from './componentes/smart/lista-livros/lista-liv
 import { AppRoutingModule } from './app.routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotfoundComponent } from './componentes/notfound/notfound.component';
+import { RodapeComponent } from './componentes/rodape/rodape.component';
+import { CardLivroComponent } from './componentes/card-livro/card-livro.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { NotfoundComponent } from './componentes/notfound/notfound.component';
     HeaderComponent,
     ListaLivrosComponent,
     NotfoundComponent,
+    RodapeComponent,
+    CardLivroComponent,
   ],
   imports: [
     BrowserModule,
