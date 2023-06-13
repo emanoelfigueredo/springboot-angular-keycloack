@@ -1,0 +1,11 @@
+@font-face {
+  font-family: jetBrains;
+  src: url("./assets/fonts/fonts/ttf/JetBrainsMono-Medium.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: jetBrains;
+}

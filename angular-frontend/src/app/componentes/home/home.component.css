@@ -1,0 +1,141 @@
+.home-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em;
+  background-image: url("../../../assets/img/background.jpg");
+}
+
+.home-text {
+  font-size: 1.2em;
+  color: white;
+}
+
+.tecnologias {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.tecnologias .tec-card {
+  display: flex;
+  background-color: white;
+  padding: 0.5em 0.75em;
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.tecnologias .tec-card img {
+  height: 55px;
+}
+
+.tecnologias .tec-card-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tecnologias .tec-card-name {
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.tecnologias .tec-card-name2 {
+  font-size: 0.75em;
+}
+
+.social-medias {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.github {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+}
+
+.github img {
+  width: 100%;
+  border-radius: 0.5em;
+}
+
+.linkedin {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  border-radius: 0.5em;
+  z-index: 200;
+}
+
+.linkedin::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #623CEA;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  clip-path: polygon(5% 0%, 22% 100%, 0% 100%, 0% 0%);
+  border-radius: 0.5em;
+}
+
+.linkedin .imagem {
+  height: 100%;
+  width: 20%;
+  padding: 0 0 0 1em;
+  z-index: 200;
+}
+
+.linkedin .imagem img {
+  width: 100%;
+  border-radius: 50%;
+  z-index: 200;
+}
+
+.linkedin .info {
+  width: 45%;
+  z-index: 200;
+}
+
+.linkedin .info .info-name {
+  font-size: 0.75em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.linkedin .info .info-dev {
+  font-size: 0.65em;
+  text-align: center;
+}
+
+.linkedin .links {
+  padding: 1em 1em 1em 0;
+  width: 35%;
+  z-index: 200;
+}
+
+.linkedin .links img {
+  width: 100%;
+}
+
+.linkedin .links a {
+  width: 100%;
+  color: white;
+  background-color: #623CEA;
+  padding: 0.5em 0.72em;
+  font-size: 0.69em;
+  text-decoration: none;
+  border-radius: 0.5em;
+}

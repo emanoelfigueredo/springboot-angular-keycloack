@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
 
@@ -7,7 +7,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:8181/auth/realms/spring-angular-keycloak-demo/protocol/openid-connect/certs
+          jwk-set-uri: http://localhost:8080/auth/realms/spring-angular-keycloak-demo/protocol/openid-connect/certs
 
   output:
     ansi:
