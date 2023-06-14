@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../../auth/auth.service';
+import { KeycloakService } from 'keycloak-angular';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -8,11 +11,19 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderComponent {
 
   @Input()
-  public headerLogin: boolean = true;
+  public usuarioEstaLogado!: boolean;
+
+  @Input()
+  public paginaAtualHome!: boolean;
+
   public tamanhoDaTela: number =  window.innerWidth;
 
+  constructor(public readonly authService: AuthService, private readonly router: Router) {
+
+  }
+
   public homeClicado(): void {
-    this.headerLogin = false;
+    this.router.navigate(['/home']);
   }
 
 }

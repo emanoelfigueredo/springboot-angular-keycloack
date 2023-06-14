@@ -5,7 +5,7 @@ services:
     container_name: db_mysql
     image: mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=root123
+      - MYSQL_ROOT_PASSWORD=wall2003
       - MYSQL_DATABASE=keycloak
     ports:
       - "3306:3306"
@@ -19,7 +19,7 @@ services:
       - KEYCLOAK_ADMIN_PASSWORD=admin
       - KC_DB=mysql
       - KC_DB_USERNAME=root
-      - KC_DB_PASSWORD=root123
+      - KC_DB_PASSWORD=wall2003
       - KC_DB_URL_HOST=db
       - KC_DB_URL_PORT=3306
       - KC_DB_SCHEMA=keycloak

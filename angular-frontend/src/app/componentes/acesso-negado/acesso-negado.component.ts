@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-notfound',
-  templateUrl: './notfound.component.html',
-  styleUrls: ['./notfound.component.css']
+  selector: 'app-acesso-negado',
+  templateUrl: './acesso-negado.component.html',
+  styleUrls: ['./acesso-negado.component.css']
 })
-export class NotfoundComponent implements OnInit {
+export class AcessoNegadoComponent implements OnInit {
 
   public classe: string = "cor-vermelha";
 

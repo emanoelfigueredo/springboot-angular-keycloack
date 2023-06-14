@@ -1,9 +1,11 @@
+import { AcessoNegadoComponent } from './componentes/acesso-negado/acesso-negado.component';
 import { AdicionarPageComponent } from './componentes/adicionar-page/adicionar-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
 import { ListaLivrosComponent } from './componentes/smart/lista-livros/lista-livros.component';
 import { NotfoundComponent } from './componentes/notfound/notfound.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,15 +15,23 @@ const routes: Routes = [
   },
   {
     path: "home",
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: "lista",
-    component: ListaLivrosComponent
+    component: ListaLivrosComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['admin'] }
   },
   {
     path: "add",
-    component: AdicionarPageComponent
+    component: AdicionarPageComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['user'] }
+  },
+  {
+    path: "acesso-negado",
+    component: AcessoNegadoComponent
   },
   {
     path: "**",
@@ -30,7 +40,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

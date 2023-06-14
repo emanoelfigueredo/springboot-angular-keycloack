@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -12,6 +13,8 @@ import { NotfoundComponent } from './componentes/notfound/notfound.component';
 import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { CardLivroComponent } from './componentes/card-livro/card-livro.component';
 import { AdicionarPageComponent } from './componentes/adicionar-page/adicionar-page.component';
+import { initializer } from 'src/utils/app-init';
+import { AcessoNegadoComponent } from './componentes/acesso-negado/acesso-negado.component';
 
 @NgModule({
   declarations: [
@@ -23,15 +26,24 @@ import { AdicionarPageComponent } from './componentes/adicionar-page/adicionar-p
     RodapeComponent,
     CardLivroComponent,
     AdicionarPageComponent,
+    AcessoNegadoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    KeycloakAngularModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      deps: [ KeycloakService ],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
