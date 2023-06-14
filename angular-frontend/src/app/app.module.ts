@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotfoundComponent } from './componentes/notfound/notfound.component';
 import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { CardLivroComponent } from './componentes/card-livro/card-livro.component';
+import { AdicionarPageComponent } from './componentes/adicionar-page/adicionar-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CardLivroComponent } from './componentes/card-livro/card-livro.componen
     NotfoundComponent,
     RodapeComponent,
     CardLivroComponent,
+    AdicionarPageComponent,
   ],
   imports: [
     BrowserModule,

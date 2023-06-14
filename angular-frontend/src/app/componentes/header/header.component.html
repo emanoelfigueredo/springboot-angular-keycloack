@@ -2,9 +2,13 @@
   <nav>
     <div class="profile">
       <p>Emanoel Figueredo</p>
-      <a href="https://github.com/emanoelfigueredo/springboot-angular-keycloack"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/emanoel-figuer%C3%AAdo-47063b215/"><i class="fa-brands fa-linkedin"></i></a>
+      <a *ngIf="tamanhoDaTela > 450" href="https://github.com/emanoelfigueredo/springboot-angular-keycloack"><i class="fa-brands fa-github"></i></a>
+      <a *ngIf="tamanhoDaTela > 450" href="https://www.linkedin.com/in/emanoel-figuer%C3%AAdo-47063b215/"><i class="fa-brands fa-linkedin"></i></a>
     </div>
-    <button>Login</button>
+    <div class="buttons" *ngIf="headerLogin">
+      <button (click)="homeClicado()" routerLink="/home">Home</button>
+      <button>Logout</button>
+    </div>
+    <button *ngIf="!headerLogin">Login</button>
   </nav>
 </header>

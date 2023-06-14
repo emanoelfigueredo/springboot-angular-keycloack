@@ -3,6 +3,8 @@ header {
   width: 100%;
   background-color: black;
   color: white;
+  z-index: 20000;
+  position: fixed;
 }
 
 header a {
@@ -37,4 +39,9 @@ header nav button {
   border: none;
   outline: none;
   border-radius: 0.5em;
+}
+
+header nav .buttons  {
+  display: flex;
+  gap: 1em;
 }
