@@ -11,14 +11,14 @@ export class AppComponent implements OnInit {
 
   public usuarioEstaLogado!: boolean;
   public paginaAtualHome!: boolean;
-  title = 'angular-frontend';
+  public paginaAtualLista!: boolean;
+  public title = 'angular-frontend';
 
-  constructor(private readonly keucloakService: KeycloakService, private router: Router) {
+  constructor(private readonly keycloakService: KeycloakService, private router: Router) {
 
   }
 
   ngOnInit(): void {
-    this.setup();
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
          this.setup();
@@ -27,10 +27,9 @@ export class AppComponent implements OnInit {
   }
 
   private setup(): void {
-    this.keucloakService.isLoggedIn().then(logado => this.usuarioEstaLogado = logado);
+    this.keycloakService.isLoggedIn().then(logado => this.usuarioEstaLogado = logado);
     this.paginaAtualHome = window.location.pathname === '/home';
-    console.log(this.paginaAtualHome)
+    this.paginaAtualLista = window.location.pathname === '/lista';
   }
-
 
 }

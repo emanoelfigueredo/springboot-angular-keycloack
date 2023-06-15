@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-livro',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-livro.component.css']
 })
 export class CardLivroComponent {
+
+  @Input()
+  public usuarioLogadoAdmin!: boolean;
 
 }

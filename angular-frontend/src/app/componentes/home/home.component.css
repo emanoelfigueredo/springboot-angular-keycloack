@@ -166,6 +166,9 @@
   .home-box {
     display: flex;
     flex-direction: column;
+    height: calc(100vh - 50px);
+    align-items: center;
+    justify-content: start;
   }
 
   .main-home-box {

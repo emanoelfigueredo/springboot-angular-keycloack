@@ -21,7 +21,7 @@ const routes: Routes = [
     path: "lista",
     component: ListaLivrosComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['admin'] }
+    data: { roles: ['user'] }
   },
   {
     path: "add",

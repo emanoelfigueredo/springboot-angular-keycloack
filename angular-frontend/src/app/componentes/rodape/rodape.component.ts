@@ -8,6 +8,8 @@ import { Component, Input } from '@angular/core';
 export class RodapeComponent {
 
   @Input()
-  public homePage: boolean = false;
+  public usuarioEstaLogado!: boolean;
+  @Input()
+  public paginaAtualLista!: boolean;
 
 }

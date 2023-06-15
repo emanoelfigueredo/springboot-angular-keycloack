@@ -27,3 +27,7 @@
 .cor-branca {
   color: white;
 }
+
+i, button {
+  cursor: pointer;
+}

@@ -12,10 +12,8 @@ export class HeaderComponent {
 
   @Input()
   public usuarioEstaLogado!: boolean;
-
   @Input()
   public paginaAtualHome!: boolean;
-
   public tamanhoDaTela: number =  window.innerWidth;
 
   constructor(public readonly authService: AuthService, private readonly router: Router) {

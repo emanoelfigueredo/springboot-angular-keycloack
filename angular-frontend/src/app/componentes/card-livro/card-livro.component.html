@@ -4,8 +4,8 @@
     <h3>As 48 leis do poder</h3>
     <p>Robert Greene</p>
     <div class="icons">
-      <i class="fa-solid fa-trash"></i>
-      <i class="fa-solid fa-pen-to-square"></i>
+      <i *ngIf="usuarioLogadoAdmin" class="fa-solid fa-trash"></i>
+      <i *ngIf="usuarioLogadoAdmin" class="fa-solid fa-pen-to-square"></i>
     </div>
     <button>Detalhes</button>
   </div>
