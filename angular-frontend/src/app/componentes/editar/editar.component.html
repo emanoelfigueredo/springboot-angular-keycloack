@@ -1,5 +1,5 @@
 <div class="add-livro">
-  <div class="card-add">
+  <div class="card-add" *ngIf="formulario">
     <div
       *ngIf="formulario.get('titulo')?.errors?.['required'] && formulario.get('titulo')?.touched"
       class="card-error"
@@ -23,7 +23,7 @@
       <input formControlName="urlImagem" type="text" placeholder="URL imagem" />
     </form>
     <div class="buttons">
-      <button (click)="adicionarLivro()" [disabled]="!formulario.valid">Adicionar</button>
+      <button (click)="atualizarLivro()" [disabled]="!formulario.valid">Atualizar</button>
       <button routerLink="/lista">Cancelar</button>
     </div>
   </div>

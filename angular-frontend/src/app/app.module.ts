@@ -15,6 +15,8 @@ import { CardLivroComponent } from './componentes/card-livro/card-livro.componen
 import { AdicionarPageComponent } from './componentes/adicionar-page/adicionar-page.component';
 import { initializer } from 'src/utils/app-init';
 import { AcessoNegadoComponent } from './componentes/acesso-negado/acesso-negado.component';
+import { CardLivroPreviewComponent } from './card-livro-preview/card-livro-preview.component';
+import { EditarComponent } from './componentes/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { AcessoNegadoComponent } from './componentes/acesso-negado/acesso-negado
     CardLivroComponent,
     AdicionarPageComponent,
     AcessoNegadoComponent,
+    CardLivroPreviewComponent,
+    EditarComponent,
   ],
   imports: [
     BrowserModule,

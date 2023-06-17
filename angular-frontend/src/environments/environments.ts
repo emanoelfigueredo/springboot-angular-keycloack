@@ -1,5 +1,5 @@
 export const enviroments = {
-  apiPath: "http://localhost:8081/api",
+  apiPath: "/api/livros",
   production: false,
   apiUrl: '/api',
   keycloak: {

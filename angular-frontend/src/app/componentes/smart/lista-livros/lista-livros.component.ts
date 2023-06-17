@@ -1,5 +1,7 @@
+import { ApiService } from './../../../services/api.service';
 import { KeycloakService } from 'keycloak-angular';
-import { Component, Input, Output, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Livro } from 'src/app/model/livro';
 
 @Component({
   selector: 'app-lista-livros',
@@ -9,14 +11,13 @@ import { Component, Input, Output, OnInit } from '@angular/core';
 export class ListaLivrosComponent implements OnInit {
 
   public usuarioLogadoAdmin!: boolean;
+  public livros: Livro[] = [];
 
-  constructor(private readonly keycloakService: KeycloakService) {
+  constructor(private readonly keycloakService: KeycloakService, private readonly apiService: ApiService) { }
 
-  }
-
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.usuarioLogadoAdmin = this.usuarioLogadoEhAdmin();
-    console.log(this.usuarioLogadoAdmin);
+    this.apiService.listar().subscribe(livrosRecebidos => this.livros = livrosRecebidos)
   }
 
   public usuarioLogadoEhAdmin(): boolean {

@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { Livro } from './../../model/livro';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-card-livro',
@@ -8,6 +11,24 @@ import { Component, Input } from '@angular/core';
 export class CardLivroComponent {
 
   @Input()
+  public livro!: Livro;
+
+  @Input()
   public usuarioLogadoAdmin!: boolean;
+
+  @Output()
+  private eventoRecarregarListaLivros = new EventEmitter();
+
+  constructor(private readonly apiService: ApiService, private readonly router: Router) {}
+
+  public removerLivro(): void {
+    this.apiService.deletar(this.livro.id as string).subscribe(() => {
+      this.eventoRecarregarListaLivros.emit();
+    });
+  }
+
+  public atualizarLivro(): void {
+    this.router.navigate(['/edit/'+ this.livro.id])
+  }
 
 }

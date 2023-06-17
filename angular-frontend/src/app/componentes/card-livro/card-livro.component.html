@@ -1,11 +1,11 @@
 <div class="card-livro">
-  <img src="../../../assets/img/book.jpg" alt="Capa do livro">
+  <img [src]="livro.urlImagem" alt="Capa do livro">
   <div class="card-livro__info">
-    <h3>As 48 leis do poder</h3>
-    <p>Robert Greene</p>
+    <h3>{{ livro.titulo }}</h3>
+    <p>{{ livro.autor }}</p>
     <div class="icons">
-      <i *ngIf="usuarioLogadoAdmin" class="fa-solid fa-trash"></i>
-      <i *ngIf="usuarioLogadoAdmin" class="fa-solid fa-pen-to-square"></i>
+      <i *ngIf="usuarioLogadoAdmin" (click)="removerLivro()" class="fa-solid fa-trash"></i>
+      <i *ngIf="usuarioLogadoAdmin" (click)="atualizarLivro()" class="fa-solid fa-pen-to-square"></i>
     </div>
     <button>Detalhes</button>
   </div>

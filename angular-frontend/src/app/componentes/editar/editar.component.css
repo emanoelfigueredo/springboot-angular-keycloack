@@ -1,0 +1,51 @@
+.add-livro {
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.card-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card-add form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+}
+
+.card-add form input {
+  width: 100%;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+}
+
+.buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: calc(50% - 0.5em) calc(50% - 0.5em);
+  gap: 1em;
+}
+
+.buttons button {
+  background-color: #623CEA;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  color: white;
+}

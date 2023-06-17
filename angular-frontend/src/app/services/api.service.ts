@@ -13,22 +13,27 @@ export class ApiService {
 
   constructor(private readonly httpClient: HttpClient) { }
 
-  public listar(): Observable<Livro> {
-    return this.httpClient.get<Livro>(this.api);
+  public listar(): Observable<Livro[]> {
+    return this.httpClient.get<Livro[]>(this.api);
   }
 
   public criar(livro: Livro): Observable<Livro> {
     return this.httpClient.post<Livro>(this.api, livro);
   }
 
-  public atualizar(livro: Livro, id: number): Observable<Livro> {
+  public atualizar(livro: Livro, id: string): Observable<Livro> {
     const apiPath = `${this.api}/${id}`
     return this.httpClient.put<Livro>(apiPath, livro);
   }
 
-  public deletar(livro: Livro, id: number): Observable<any> {
+  public deletar(id: string): Observable<void> {
     const apiPath = `${this.api}/${id}`
-    return this.httpClient.delete<Livro>(apiPath);
+    return this.httpClient.delete<void>(apiPath);
+  }
+
+  public detalhar(id: string): Observable<Livro> {
+    const apiPath = `${this.api}/${id}`;
+    return this.httpClient.get<Livro>(apiPath);
   }
 
 }

@@ -1,11 +1,10 @@
 <div class="box-lista-livros">
   <div class="lista-livros">
-    <app-card-livro [usuarioLogadoAdmin]="usuarioLogadoAdmin"></app-card-livro>
-    <app-card-livro [usuarioLogadoAdmin]="usuarioLogadoAdmin"></app-card-livro>
-    <app-card-livro [usuarioLogadoAdmin]="usuarioLogadoAdmin"></app-card-livro>
-    <app-card-livro [usuarioLogadoAdmin]="usuarioLogadoAdmin"></app-card-livro>
-    <app-card-livro [usuarioLogadoAdmin]="usuarioLogadoAdmin"></app-card-livro>
-    <app-card-livro [usuarioLogadoAdmin]="usuarioLogadoAdmin"></app-card-livro>
-    <app-card-livro [usuarioLogadoAdmin]="usuarioLogadoAdmin"></app-card-livro>
+    <app-card-livro
+      (eventoRecarregarListaLivros)="ngOnInit()"
+      *ngFor="let livro of livros"
+      [livro]="livro"
+      [usuarioLogadoAdmin]="usuarioLogadoAdmin"
+    ></app-card-livro>
   </div>
 </div>

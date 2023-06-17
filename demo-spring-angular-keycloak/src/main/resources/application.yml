@@ -1,0 +1,23 @@
+server:
+  port: 8181
+
+spring:
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/auth/realms/demo-keycloak-fullstack/protocol/openid-connect/certs
+
+  output:
+    ansi:
+      enabled: always
+
+    application:
+      name: livros-api
+
+    data:
+      mongodb:
+        database: SpringAngularKeycloakDemoLivros
+        host: localhost
+        port: 27017

@@ -1,0 +1,12 @@
+<div class="card-livro">
+  <img [src]="obterUrlImagem()" alt="Capa do livro" onerror="this.src='https://filantropia.tv/wp-content/uploads/2014/04/news_text_1095.jpg'">
+  <div class="card-livro__info">
+    <h3>{{ obterTitulo() }}</h3>
+    <p>{{ obterAutor() }}</p>
+    <div class="icons">
+      <i class="fa-solid fa-trash"></i>
+      <i class="fa-solid fa-pen-to-square"></i>
+    </div>
+    <button>Detalhes</button>
+  </div>
+</div>

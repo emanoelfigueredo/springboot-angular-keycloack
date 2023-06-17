@@ -1,3 +1,4 @@
+import { EditarComponent } from './componentes/editar/editar.component';
 import { AcessoNegadoComponent } from './componentes/acesso-negado/acesso-negado.component';
 import { AdicionarPageComponent } from './componentes/adicionar-page/adicionar-page.component';
 import { NgModule } from '@angular/core';
@@ -27,7 +28,13 @@ const routes: Routes = [
     path: "add",
     component: AdicionarPageComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['user'] }
+    data: { roles: ['admin'] }
+  },
+  {
+    path: "edit/:id",
+    component: EditarComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['admin'] }
   },
   {
     path: "acesso-negado",
