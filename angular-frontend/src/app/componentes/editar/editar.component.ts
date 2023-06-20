@@ -1,7 +1,8 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ApiService } from './../../services/api.service';
+import { ApiService } from '../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { tratarErrosPadroes } from 'src/utils/tratador-erros';
 
 @Component({
   selector: 'app-editar',
@@ -9,7 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./editar.component.css'],
 })
 export class EditarComponent implements OnInit {
-
   private id!: string;
   public formulario!: FormGroup;
 
@@ -30,32 +30,27 @@ export class EditarComponent implements OnInit {
   }
 
   private criarFormGroup(): void {
-    this.apiService.detalhar(this.id).subscribe(livro => {
+    this.apiService.detalhar(this.id).subscribe((livro) => {
       this.formulario = this.formBuilder.group({
-        titulo: [livro.titulo, Validators.compose([
-          Validators.required
-        ])],
-        autor: [livro.autor, Validators.compose([
-          Validators.required
-        ])],
-        urlImagem: [livro.urlImagem, Validators.compose([
-          Validators.required
-        ])]
-      })
-    })
+        titulo: [livro.titulo, Validators.compose([Validators.required])],
+        autor: [livro.autor, Validators.compose([Validators.required])],
+        urlImagem: [livro.urlImagem, Validators.compose([Validators.required])],
+      });
+    },
+    erro => tratarErrosPadroes(erro, this.router));
   }
 
   public atualizarLivro(): void {
-    if(this.formulario.valid) {
+    if (this.formulario.valid) {
       const livro = {
-        titulo: this.formulario.get("titulo")?.value,
-        autor: this.formulario.get("autor")?.value,
-        urlImagem: this.formulario.get("urlImagem")?.value,
-      }
-      this.apiService.atualizar(livro, this.id).subscribe(() => {
-        this.router.navigate(['/lista']);
-      })
+        titulo: this.formulario.get('titulo')?.value,
+        autor: this.formulario.get('autor')?.value,
+        urlImagem: this.formulario.get('urlImagem')?.value,
+      };
+      this.apiService.atualizar(livro, this.id).subscribe(
+        () => this.router.navigate(['/lista']),
+        (erro) => tratarErrosPadroes(erro, this.router)
+      );
     }
   }
-
 }

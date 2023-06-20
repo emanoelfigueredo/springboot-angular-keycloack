@@ -1,9 +1,9 @@
 <header>
   <nav>
-    <div class="profile">
+    <div class="profile" @listCardsAnimation>
       <p>Emanoel Figueredo</p>
-      <a *ngIf="tamanhoDaTela > 450" href="https://github.com/emanoelfigueredo/springboot-angular-keycloack"><i class="fa-brands fa-github"></i></a>
-      <a *ngIf="tamanhoDaTela > 450" href="https://www.linkedin.com/in/emanoel-figuer%C3%AAdo-47063b215/"><i class="fa-brands fa-linkedin"></i></a>
+      <a class="link-social" *ngIf="tamanhoDaTela > 450" href="https://github.com/emanoelfigueredo/springboot-angular-keycloack"><i class="fa-brands fa-github"></i></a>
+      <a class="link-social" *ngIf="tamanhoDaTela > 450" href="https://www.linkedin.com/in/emanoel-figuer%C3%AAdo-47063b215/"><i class="fa-brands fa-linkedin"></i></a>
     </div>
     <div class="buttons" *ngIf="usuarioEstaLogado">
       <button (click)="homeClicado()" *ngIf="!paginaAtualHome">Home</button>

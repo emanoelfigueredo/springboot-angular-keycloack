@@ -1,0 +1,10 @@
+<div class="box-lista-livros">
+  <div class="lista-livros">
+    <app-card-livro
+        *ngFor="let livro of livros"
+        (eventoRecarregarListaLivros)="ngOnInit()"
+        [livro]="livro"
+        [usuarioLogadoAdmin]="usuarioLogadoAdmin"
+      ></app-card-livro>
+  </div>
+</div>

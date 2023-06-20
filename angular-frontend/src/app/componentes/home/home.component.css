@@ -1,12 +1,13 @@
 .home-box {
   width: 100%;
+  min-height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
   gap: 2em;
   padding: 2em;
   background-image: url("../../../assets/img/background.jpg");
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .main-home-box {

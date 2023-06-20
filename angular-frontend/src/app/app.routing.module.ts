@@ -1,12 +1,13 @@
-import { EditarComponent } from './componentes/editar/editar.component';
+import { ErrorServerComponent } from './componentes/error-server/error-server.component';
 import { AcessoNegadoComponent } from './componentes/acesso-negado/acesso-negado.component';
 import { AdicionarPageComponent } from './componentes/adicionar-page/adicionar-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './componentes/home/home.component';
-import { ListaLivrosComponent } from './componentes/smart/lista-livros/lista-livros.component';
 import { NotfoundComponent } from './componentes/notfound/notfound.component';
 import { AuthGuard } from './auth/auth.guard';
+import { ListaLivrosComponent } from './componentes/lista-livros/lista-livros.component';
+import { EditarComponent } from './componentes/editar/editar.component';
 
 const routes: Routes = [
   {
@@ -37,8 +38,14 @@ const routes: Routes = [
     data: { roles: ['admin'] }
   },
   {
+    path: "server-error",
+    component: ErrorServerComponent,
+    canActivate: [AuthGuard],
+  },
+  {
     path: "acesso-negado",
-    component: AcessoNegadoComponent
+    component: AcessoNegadoComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: "**",

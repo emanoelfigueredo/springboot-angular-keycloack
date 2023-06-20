@@ -1,3 +1,4 @@
+import { listCardsTrigger } from 'src/app/animations';
 import { Router } from '@angular/router';
 import { AuthService } from './../../auth/auth.service';
 import { KeycloakService } from 'keycloak-angular';
@@ -6,7 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  animations: [
+    listCardsTrigger
+  ]
 })
 export class HeaderComponent {
 
