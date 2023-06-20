@@ -3,7 +3,6 @@ package com.efigueredo.demo_spring_angular_keycloak.infra.controller;
 import com.efigueredo.demo_spring_angular_keycloak.domain.Livro;
 import com.efigueredo.demo_spring_angular_keycloak.service.LivroService;
 import com.efigueredo.demo_spring_angular_keycloak.service.dto.DtoLivro;
-import jakarta.annotation.security.RolesAllowed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
